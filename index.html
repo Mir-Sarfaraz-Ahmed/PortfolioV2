@@ -8,6 +8,77 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Chakra+Petch:wght@300;400;500;600&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* ── Certifications ─────────────────────────── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px;
+  max-width: 1140px;
+  margin: 40px auto 0;
+}
+.cert-card {
+  background: var(--surface2);
+  border: 1px solid var(--dim);
+  padding: 24px;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  transition: all .25s;
+}
+.cert-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+.cert-card:hover {
+  background: rgba(74,127,167,0.08);
+  border-color: var(--accent);
+}
+.cert-card.coming-soon { opacity: .4; cursor: default; }
+.cert-issuer {
+  font-family: var(--font-ui); font-size: 8px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.cert-issuer::before { content: '◆'; font-size: 6px; }
+.cert-name {
+  font-family: var(--font-display); font-size: 16px;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--white); line-height: 1.3;
+}
+.cert-date {
+  font-family: var(--font-ui); font-size: 8px; letter-spacing: 2px;
+  color: var(--muted); margin-top: 12px; text-transform: uppercase;
+}
+.cert-badge {
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  border: 1px solid var(--dim); background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--accent);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+/* ── ACS block inside project expand ────────── */
+.acs-block {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--dim);
+}
+.acs-label {
+  font-family: var(--font-ui); font-size: 8px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.acs-label::before { content: '►'; font-size: 6px; }
+.acs-block p {
+  font-family: var(--font-body); font-size: 14px;
+  line-height: 1.85; color: var(--muted);
+}
+</style>
 </head>
 <body>
 
@@ -21,22 +92,23 @@
 <nav id="navbar">
   <div class="nav-logo">MSA</div>
   <ul class="nav-links">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#home"            class="active">Home</a></li>
+    <li><a href="#about"                         >About</a></li>
+    <li><a href="#projects"                      >Projects</a></li>
+    <li><a href="#certifications"                >Certs</a></li>
+    <li><a href="#contact"                       >Contact</a></li>
   </ul>
   <div class="nav-status">
     <div class="status-dot"></div>Available · 2026
   </div>
 </nav>
 
+
 <!-- ══════════════════════════════════════
      HERO
 ══════════════════════════════════════ -->
 <header id="home" class="section">
 
-  <!-- background layers -->
   <div class="dot-grid"></div>
   <div class="scan-line"></div>
   <div class="hex-bg">
@@ -44,7 +116,6 @@
     <div class="hex"></div><div class="hex"></div>
   </div>
 
-  <!-- corner labels -->
   <span class="sc sc-tl reveal-left">SYS.INIT / PORTFOLIO</span>
   <span class="sc sc-tr">VER 2.0 · 2026</span>
   <span class="sc sc-bl">DELHI, INDIA</span>
@@ -52,23 +123,18 @@
 
   <div class="hero-content">
 
-    <!-- LEFT TEXT -->
     <div class="hero-left">
       <div class="hero-tag reveal">WEB DEV &amp; AI EXPLORER</div>
-
       <h1 class="hero-name reveal">
         <span class="ln1">Mir</span>
         <span class="ln2">Sarfaraz</span>
         <span class="ln3">Ahmed</span>
       </h1>
-
       <div class="hero-role reveal">Python · SQL · HTML · JavaScript</div>
-
       <p class="hero-bio reveal">
         Self-driven CS learner building real-world skills. Long-term goal: impactful solutions in
         <strong>AI &amp; Software Development</strong>.
       </p>
-
       <div class="hero-actions reveal">
         <a href="https://github.com/Mir-Sarfaraz-Ahmed" target="_blank" class="btn btn-primary">◈ GitHub</a>
         <a href="https://www.linkedin.com/in/mir-sarfaraz-ahmed-367957329/" target="_blank" class="btn btn-ghost">◉ LinkedIn</a>
@@ -76,7 +142,6 @@
       </div>
     </div>
 
-    <!-- RIGHT PANEL -->
     <div class="hero-panel reveal">
       <div class="panel-header">
         <span class="panel-title">PROFILE.DAT</span>
@@ -108,7 +173,6 @@
 
   </div>
 
-  <!-- TICKER -->
   <div class="ticker-bar">
     <div class="ticker-track">
       <span>Python</span><span>SQL</span><span>HTML</span><span>JavaScript</span>
@@ -131,7 +195,6 @@
 
   <div class="about-grid">
 
-    <!-- LEFT -->
     <div class="about-left-panel">
       <div class="section-tag reveal">System Profile</div>
       <h2 class="section-title reveal">
@@ -151,87 +214,55 @@
       <div class="ach-list reveal">
         <div class="ach-item">
           <div class="ach-icon">◆</div>
-          <div class="ach-text">
-            Science Model — Zonal Level 1st
-            <small>Best Project Award</small>
-          </div>
+          <div class="ach-text">Science Model — Zonal Level 1st<small>Best Project Award</small></div>
         </div>
         <div class="ach-item">
           <div class="ach-icon">◈</div>
-          <div class="ach-text">
-            Science Model — District Level 2nd
-            <small>Runner Up</small>
-          </div>
+          <div class="ach-text">Science Model — District Level 2nd<small>Runner Up</small></div>
         </div>
         <div class="ach-item">
           <div class="ach-icon">◉</div>
-          <div class="ach-text">
-            State Level Participant
-            <small>Science Model Competition</small>
-          </div>
+          <div class="ach-text">State Level Participant<small>Science Model Competition</small></div>
         </div>
         <div class="ach-item">
           <div class="ach-icon">▣</div>
-          <div class="ach-text">
-            Class Monitor Since Grade 7
-            <small>Leadership · NCC Cadet · Discipline Captain</small>
-          </div>
+          <div class="ach-text">Class Monitor Since Grade 7<small>Leadership · NCC Cadet · Discipline Captain</small></div>
         </div>
       </div>
     </div>
 
     <div class="about-divider"></div>
 
-    <!-- RIGHT -->
     <div class="about-right-panel">
       <div class="section-tag reveal">Tech Stack</div>
 
       <div class="skills-block reveal" id="skillsBlock">
         <div class="skill-row">
-          <div class="skill-meta">
-            <span class="skill-name">Python</span>
-            <span class="skill-pct">80%</span>
-          </div>
+          <div class="skill-meta"><span class="skill-name">Python</span><span class="skill-pct">80%</span></div>
           <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-meta">
-            <span class="skill-name">SQL</span>
-            <span class="skill-pct">70%</span>
-          </div>
+          <div class="skill-meta"><span class="skill-name">SQL</span><span class="skill-pct">70%</span></div>
           <div class="skill-track"><div class="skill-fill" data-w="70"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-meta">
-            <span class="skill-name">HTML</span>
-            <span class="skill-pct">75%</span>
-          </div>
+          <div class="skill-meta"><span class="skill-name">HTML</span><span class="skill-pct">75%</span></div>
           <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-meta">
-            <span class="skill-name">JavaScript</span>
-            <span class="skill-pct">40%</span>
-          </div>
+          <div class="skill-meta"><span class="skill-name">JavaScript</span><span class="skill-pct">40%</span></div>
           <div class="skill-track"><div class="skill-fill" data-w="40"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-meta">
-            <span class="skill-name">CSS</span>
-            <span class="skill-pct">45%</span>
-          </div>
+          <div class="skill-meta"><span class="skill-name">CSS</span><span class="skill-pct">45%</span></div>
           <div class="skill-track"><div class="skill-fill" data-w="45"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-meta">
-            <span class="skill-name">Arduino / IoT</span>
-            <span class="skill-pct">60%</span>
-          </div>
+          <div class="skill-meta"><span class="skill-name">Arduino / IoT</span><span class="skill-pct">60%</span></div>
           <div class="skill-track"><div class="skill-fill" data-w="60"></div></div>
         </div>
       </div>
 
-      <!-- Terminal -->
       <div class="terminal reveal">
         <div class="terminal-dots">
           <span class="td-red"></span>
@@ -241,14 +272,15 @@
         <div class="terminal-body">
           <p><span class="t-cmd">$</span> git log --oneline</p>
           <p><span class="t-sha">a4f2c01</span> feat: V2I traffic system — IoT</p>
-          <p><span class="t-sha">3b8e720</span> feat: portfolio website v2.0</p>
+          <p><span class="t-sha">3b8e720</span> feat: anti-collision system — ACS</p>
+          <p><span class="t-sha">9c1d445</span> feat: portfolio website v2.0</p>
           <p><span class="t-cmd">$</span> cat goals.txt</p>
           <p><span class="t-hi">→ B.Tech CSE · AI/ML · Web Dev</span></p>
           <p><span class="t-cmd">$</span> <span class="t-cursor"></span></p>
         </div>
       </div>
-
     </div>
+
   </div>
 </section>
 
@@ -266,12 +298,12 @@
       <div class="section-tag">Build Log</div>
       <h2 class="section-title">Selected<br><span class="accent">Work_</span></h2>
     </div>
-    <div class="proj-count">02 PROJECTS<br><span>CLICK ROW TO EXPAND</span></div>
+    <div class="proj-count">03 PROJECTS<br><span>CLICK ROW TO EXPAND</span></div>
   </div>
 
   <div class="proj-table reveal">
 
-    <!-- Project 1 -->
+    <!-- Project 1 — Smart Traffic + ACS -->
     <div class="proj-row" onclick="toggleProject(0)">
       <span class="p-idx">01</span>
       <span class="p-title">Smart Traffic System</span>
@@ -279,6 +311,7 @@
         <span class="p-tag">Arduino</span>
         <span class="p-tag">IoT</span>
         <span class="p-tag">RF</span>
+        <span class="p-tag">ACS</span>
       </div>
       <span class="p-year">2025</span>
       <span class="p-arrow" id="parr0">▼</span>
@@ -286,16 +319,32 @@
     <div class="proj-detail" id="pdet0">
       <div class="proj-detail-inner">
         <div>
-          <p>Arduino-based V2I intelligent traffic system using IR sensors for density detection, RF-based ambulance priority override, and gas sensor fire detection. Won 1st at Zonal and 2nd at District science model competition.</p>
+          <p>
+            Arduino-based V2I intelligent traffic control using IR sensors for density
+            detection, RF-based ambulance priority override, and adaptive signal timing.
+            Won 1st at Zonal and 2nd at District level science model competition.
+          </p>
           <a href="traffic-project.html" class="proj-detail-link">View Full Project →</a>
+
+          <!-- ACS grouped here -->
+          <div class="acs-block">
+            <div class="acs-label">Anti-Collision System (ACS)</div>
+            <p>
+              Collision Avoidance Warning System for hazardous road sections like mountain
+              turns. Uses IR sensors and a relay module to detect oncoming vehicles around
+              blind spots and trigger real-time visual alerts — preventing accidents before
+              they happen.
+            </p>
+          </div>
         </div>
         <div class="proj-detail-img">
-          <img src="traffic1.jpg" alt="Traffic System" onerror="this.parentElement.innerHTML='[ TRAFFIC MODEL ]'">
+          <img src="traffic1.jpg" alt="Traffic System"
+               onerror="this.parentElement.innerHTML='[ TRAFFIC MODEL ]'">
         </div>
       </div>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Project 2 — Portfolio -->
     <div class="proj-row" onclick="toggleProject(1)">
       <span class="p-idx">02</span>
       <span class="p-title">Portfolio Website</span>
@@ -310,14 +359,22 @@
     <div class="proj-detail" id="pdet1">
       <div class="proj-detail-inner">
         <div>
-          <p>This portfolio — built from scratch using vanilla HTML, CSS and JavaScript. Features contact form via Formspree, smooth scroll, and a dedicated project detail page. Continuously being improved.</p>
+          <p>
+            Built from scratch using vanilla HTML, CSS and JavaScript. Features a dark
+            navy futuristic design system, contact form via Formspree, animated skill bars,
+            custom cursor, scroll reveals, and a dedicated project detail page.
+          </p>
           <a href="#home" class="proj-detail-link">You're looking at it →</a>
         </div>
-        <div class="proj-detail-img">[ PORTFOLIO · LIVE ]</div>
+        <!-- Add portfolio-screenshot.png to your repo to show here -->
+        <div class="proj-detail-img">
+          <img src="portfolio-screenshot.png" alt="Portfolio Screenshot"
+               onerror="this.parentElement.innerHTML='[ TAKE A SCREENSHOT &amp; SAVE AS portfolio-screenshot.png ]'">
+        </div>
       </div>
     </div>
 
-    <!-- Project 3 — placeholder -->
+    <!-- Project 3 — Coming Soon -->
     <div class="proj-row proj-coming">
       <span class="p-idx">03</span>
       <span class="p-title">AI Project</span>
@@ -334,16 +391,64 @@
 
 
 <!-- ══════════════════════════════════════
+     CERTIFICATIONS
+══════════════════════════════════════ -->
+<section id="certifications" class="section" style="background:var(--bg2)">
+
+  <span class="sc sc-tl">04 / CERTIFICATIONS</span>
+  <span class="sc sc-tr">CREDENTIALS.DAT</span>
+
+  <div style="max-width:1140px; margin:0 auto">
+
+    <div class="projects-head reveal" style="margin-bottom:10px">
+      <div>
+        <div class="section-tag">Verified Skills</div>
+        <h2 class="section-title">Certifi<span class="accent">cations_</span></h2>
+      </div>
+      <div class="proj-count">1 EARNED<br><span>MORE COMING SOON</span></div>
+    </div>
+
+    <div class="cert-grid reveal">
+
+      <!-- Cert 1 — Generative AI -->
+      <div class="cert-card">
+        <div class="cert-badge">◆</div>
+        <div class="cert-issuer">Generative AI</div>
+        <div class="cert-name">Generative AI<br>Fundamentals</div>
+        <div class="cert-date">Issued · 2024–25</div>
+      </div>
+
+      <!-- Placeholder 1 -->
+      <div class="cert-card coming-soon">
+        <div class="cert-badge" style="color:var(--dim);border-color:var(--dim)">+</div>
+        <div class="cert-issuer" style="color:var(--dim)">Coming Soon</div>
+        <div class="cert-name" style="color:var(--dim)">Next Certification</div>
+        <div class="cert-date">In Progress</div>
+      </div>
+
+      <!-- Placeholder 2 -->
+      <div class="cert-card coming-soon">
+        <div class="cert-badge" style="color:var(--dim);border-color:var(--dim)">+</div>
+        <div class="cert-issuer" style="color:var(--dim)">Coming Soon</div>
+        <div class="cert-name" style="color:var(--dim)">Next Certification</div>
+        <div class="cert-date">In Progress</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
      CONTACT
 ══════════════════════════════════════ -->
 <section id="contact" class="section">
 
-  <span class="sc sc-tl">04 / CONTACT</span>
+  <span class="sc sc-tl">05 / CONTACT</span>
   <span class="sc sc-tr">CONNECT.SYS</span>
 
   <div class="contact-wrap">
 
-    <!-- LEFT -->
     <div class="contact-left">
       <div class="section-tag reveal">Reach Out</div>
       <h2 class="section-title reveal">
@@ -389,7 +494,6 @@
       </div>
     </div>
 
-    <!-- RIGHT FORM -->
     <div class="contact-form-wrap reveal">
       <form id="contact-form" action="https://formspree.io/f/xojnpjqy" method="POST">
         <div class="form-group">
@@ -427,5 +531,24 @@
 </footer>
 
 <script src="script.js" defer></script>
+
+<script>
+/* Extended nav observer — now includes certifications */
+(function () {
+  const ids   = ['home', 'about', 'projects', 'certifications', 'contact'];
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY + 80;
+    ids.forEach((id, i) => {
+      const sec = document.getElementById(id);
+      if (sec && y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+        links.forEach(a => a.classList.remove('active'));
+        if (links[i]) links[i].classList.add('active');
+      }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
