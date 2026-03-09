@@ -699,25 +699,111 @@ footer {
 .btn:hover { background:var(--accent-hi); }
 
 /* ════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — TABLET
 ════════════════════════════════════════════ */
 @media (max-width:900px) {
-  body { padding-top:58px; }
-  .section { padding:60px 20px; }
-  .hero-content { grid-template-columns:1fr; }
-  .hero-panel { display:none; }
-  .about-grid { grid-template-columns:1fr; }
-  .about-divider { height:1px; background:var(--dim); margin:40px 0; }
-  .about-divider::before { top:50%; left:30px; transform:translateY(-50%); padding:0 8px; }
-  .about-left-panel  { padding-right:0; }
-  .about-right-panel { padding-left:0; }
-  .proj-row { grid-template-columns:40px 1fr 40px; }
-  .p-tags,.p-year { display:none; }
-  .proj-detail-inner { grid-template-columns:1fr; }
-  .contact-wrap { grid-template-columns:1fr; gap:40px; }
-  #navbar { padding:0 20px; }
-  .nav-status { display:none; }
-  .sc { display:none; }
-  footer { flex-direction:column; gap:12px; text-align:center; }
-  .project-page { padding:24px 18px; margin:20px 10px; }
+  /* --- layout --- */
+  body { padding-top:52px; }
+
+  .section {
+    padding: 50px 20px 60px;
+    min-height: auto;         /* no forced full-screen height on mobile */
+  }
+
+  /* hero: single column, no wasted space */
+  #home {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 0;
+  }
+  .hero-panel { display: none; }   /* hide profile card — saves space */
+
+  .hero-name { font-size: clamp(48px, 12vw, 72px); }
+
+  /* about */
+  .about-grid { grid-template-columns: 1fr; gap: 0; }
+  .about-divider {
+    height: 1px; width: 100%;
+    background: var(--dim); margin: 36px 0;
+  }
+  .about-divider::before {
+    top: 50%; left: 30px;
+    transform: translateY(-50%);
+    padding: 0 8px;
+  }
+  .about-left-panel  { padding-right: 0; }
+  .about-right-panel { padding-left: 0;  }
+
+  /* projects */
+  .projects-head { flex-direction: column; gap: 16px; align-items: flex-start; margin-bottom: 30px; }
+  .proj-count { text-align: left; }
+  .proj-row {
+    grid-template-columns: 36px 1fr 36px;
+    gap: 12px; padding: 16px 0;
+  }
+  .p-tags  { display: none; }
+  .p-year  { display: none; }
+  .proj-detail-inner { grid-template-columns: 1fr; }
+  .proj-detail-img   { min-height: 180px; }
+
+  /* contact */
+  .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
+
+  /* footer */
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+
+  /* project page */
+  .project-page { padding: 22px 16px; margin: 16px 10px; }
+  .project-images img { max-width: 100%; height: 200px; }
+
+  /* hide corner labels — too small */
+  .sc         { display: none; }
+  .nav-status { display: none; }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — MOBILE NAV
+════════════════════════════════════════════ */
+@media (max-width:900px) {
+  #navbar {
+    padding: 0 16px;
+    height: 52px;
+  }
+  .nav-logo { font-size: 12px; letter-spacing: 4px; }
+  .nav-links { gap: 0; }
+  .nav-links a {
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 6px 10px;
+  }
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — SMALL PHONES (< 480px)
+════════════════════════════════════════════ */
+@media (max-width:480px) {
+  .nav-links a { padding: 6px 7px; font-size: 7px; letter-spacing: 1px; }
+  .nav-logo    { font-size: 11px; letter-spacing: 3px; }
+
+  .hero-name   { font-size: clamp(40px, 14vw, 60px); }
+  .hero-tag    { font-size: 7px; }
+  .hero-bio    { font-size: 14px; }
+  .hero-actions { gap: 8px; }
+  .btn         { padding: 11px 16px; font-size: 8px; letter-spacing: 2px; }
+
+  .section-title { font-size: clamp(30px, 10vw, 50px); }
+
+  .p-title     { font-size: 16px; }
+  .p-idx       { font-size: 10px; }
+
+  .ch-value    { font-size: 9px; word-break: break-all; }
+
+  .cert-grid   { grid-template-columns: 1fr; }
+
+  footer       { padding: 20px 16px; }
 }
