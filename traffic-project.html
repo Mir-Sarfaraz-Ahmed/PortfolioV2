@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Traffic System — Mir Sarfaraz Ahmed</title>
+<link rel="icon" type="image/png" href="profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Chakra+Petch:wght@300;400;500;600&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="c-dot" id="cdot"></div>
+<div class="c-ring" id="cring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">MSA</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects" class="active">Projects</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-status">
+    <div class="status-dot"></div>Available · 2026
+  </div>
+</nav>
+
+<!-- PROJECT PAGE -->
+<div style="max-width:1140px;margin:40px auto;padding:0 40px 80px">
+
+  <a href="index.html#projects" class="back-btn reveal">Back to Projects</a>
+
+  <section class="project-page reveal">
+
+    <span class="sc sc-tl" style="position:absolute">PROJECT.DAT / V2I</span>
+    <span class="sc sc-tr" style="position:absolute">2025</span>
+
+    <h1>IoT-Based Smart Traffic<br>Management System (V2I)</h1>
+
+    <p>
+      Arduino Uno powered intelligent traffic control model using IR sensors
+      for density detection, RF-based ambulance priority override,
+      and gas sensor-based fire detection.
+    </p>
+
+    <div class="tech-stack">
+      <span>Arduino</span>
+      <span>IoT</span>
+      <span>IR Sensors</span>
+      <span>RF Communication</span>
+      <span>Gas Sensor</span>
+      <span>V2I</span>
+    </div>
+
+    <hr>
+
+    <h2>System Architecture</h2>
+    <ul>
+      <li>Arduino Uno as central controller</li>
+      <li>IR sensors for vehicle density detection at each lane</li>
+      <li>RF transmitter/receiver module for emergency vehicle override</li>
+      <li>Gas sensor for fire / hazard detection</li>
+      <li>Signal timing algorithm adapts based on real-time traffic intensity</li>
+    </ul>
+
+    <hr>
+
+    <h2>System Workflow</h2>
+    <div class="workflow-image">
+      <img src="workflow.png" alt="Smart Traffic System Workflow">
+    </div>
+
+    <hr>
+
+    <h2>My Role</h2>
+    <ul>
+      <li>Designed and built the complete mechanical traffic model</li>
+      <li>Integrated IR sensors with Arduino Uno for density detection</li>
+      <li>Implemented RF-based emergency vehicle prioritization logic</li>
+      <li>Collaborated on project presentation and technical documentation</li>
+    </ul>
+
+    <hr>
+
+    <h2>Project Images</h2>
+    <div class="project-images">
+      <img src="traffic1.jpg" alt="Traffic Model — Front View">
+      <img src="traffic2.jpg" alt="Traffic Model — Side View">
+    </div>
+
+    <hr>
+
+    <h2>Virtual Demonstration</h2>
+    <div class="media-box">
+      <video controls>
+        <source src="emergency-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="media-caption">
+        Demonstration of RF-based emergency vehicle override system.
+        The traffic light automatically switches to green for the approaching ambulance.
+      </p>
+    </div>
+
+    <hr>
+
+    <h2>Project Presentation</h2>
+    <div class="media-box">
+      <p class="about-desc" style="margin-top:0;margin-bottom:16px">
+        Detailed project explanation including system architecture,
+        working mechanism, circuit design, and implementation strategy.
+      </p>
+      <a href="ppt.pdf" target="_blank" class="btn">► View Full Presentation (PDF)</a>
+      <br><br>
+      <embed src="ppt.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+
+  </section>
+</div>
+
+<footer>
+  <div class="footer-brand">MSA</div>
+  <div class="footer-copy">© 2026 Mir Sarfaraz Ahmed</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
